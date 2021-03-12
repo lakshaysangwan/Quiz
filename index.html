@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div onload="start()" class="container mt-3">
+      <div id="start-page">
+        <div class="display-1 text-center">Hey</div>
+        <div class="display-5 text-center">This is test</div>
+        <div class="login">
+          <div class="h3 text-center">Enter your credentials here</div>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">E-mail ID</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <div class="input-group flex-nowrap mt-2">
+            <span class="input-group-text" id="addon-wrapping">Password</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your password here"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+          </div>
+          <div class="text-center mt-3">
+            <button type="button" class="btn btn-success" onclick="startTest()">
+              Start
+            </button>
+          </div>
+        </div>
+        <div class="card mt-5">
+          <div class="card-header text-center">Instructions</div>
+          <div class="card-body">
+            <ol>
+              <li>Please don't cry if test is difficult, it's really embarrassing.</li>
+              <li>If crying is necessary, make sure you have your own napkin. Don't cry on keyboard.</li>
+              <li>Question are really random.</li>
+              <li>If you're still reading....
+                <ul>
+                  <li>There are 10 questions.
+                  <li>10 minutes for whole test.</li>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <div class="h5 text-center">LOL, good luck.</div>
+          </div>
+        </div>
+      </div>
+      <div id="question-page">
+        
+      </div>
+      <div id="result-page">
+        
+      </div>
+    </div>
+  </body>
+</html>

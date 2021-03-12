@@ -1,0 +1,28 @@
+.container{
+    border: 5px solid black;
+    height: 95%;
+    width: 700px;
+}
+.login{
+    /* border: 2px solid orange; */
+    /* height: 95%; */
+    margin: 2em auto;
+    /* max-width: 500px; */
+}
+.button{
+    text-align: center;
+}
+
+
+
+
+
+
+/* testing */
+#start-page{
+    /* visibility: hidden; */
+}
+
+#question-page{
+    visibility: visible;
+}
