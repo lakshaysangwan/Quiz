@@ -1,5 +1,5 @@
 .container{
-    border: 5px solid black;
+    border: 5px solid rgb(0, 119, 255);
     height: 95%;
     max-width: 700px;
 }
@@ -14,19 +14,15 @@
     margin-top: 2em;
 }
 
-#a,#b,#c,#d,#e,#f,#g,#h,#i,#j{
+#a,#b,#c,#d,#e,#f,#g,#h,#i,#j,#previous,#next,#submit{
     display: none;
 }
-
-
-
-/* testing */
-#start-page{
-    /* visibility: hidden; */
+#timer-card{
+    margin: 2em auto;
 }
-
-
+#timer{
+    display: none;
+}
 #question-page{
-    /* visibility: hidden; */
-    display:none;
+    display: none;
 }
