@@ -1,63 +1,47 @@
-.container{
-    /* border: 5px solid rgb(0, 119, 255); */
-    height: 95%;
-    max-width: 700px;
+.container {
+  /* border: 5px solid rgb(0, 119, 255); */
+  height: 95%;
+  max-width: 700px;
 }
-.instructions{
-    margin-bottom: 2em;
+.instructions {
+  margin-bottom: 2em;
 }
-.login{
-    margin: 2em auto;
-    max-width: 500px;
+.login {
+  margin: 2em auto;
+  max-width: 500px;
 }
-.button{
-    text-align: center;
+.button {
+  text-align: center;
 }
-.form-check{
-    margin-top: 2em;
+.form-check {
+  margin-top: 2em;
 }
-#timer-card{
-    margin: 2em auto;
+#timer-card {
+  margin: 2em auto;
 }
-#nextSubmitPreviousButtons{
-    margin-bottom: 2em;
-}
-
-#previous, #submit, #next{
-    visibility:hidden;
-    margin: 0em 1em;
-}
-#scoreDiv{
-    margin-top: 5em;
-    /* border: 5px solid orange; */
+#nextSubmitPreviousButtons {
+  margin-bottom: 2em;
 }
 
-
+#previous,
+#submit,
+#next {
+  visibility: hidden;
+  margin: 0em 1em;
+}
+#scoreDiv {
+  margin-top: 5em;
+  /* border: 5px solid orange; */
+}
 
 /* -----------------------divs made invisible ------------------------*/
-#timer{
-    display: none;
+#timer {
+  display: none;
 }
-#question-page{
-    display: none;
-}
-
-#result-page{
-    display: none;
+#question-page {
+  display: none;
 }
 
-/* testing */
-
-
-/* #result-page{
-    display: block;
-}  */
-/* #introduction-page{
-    display: none;
-} */
-/* #question-page{
-    display: block;
-} */
-/* #timer{
-    display: block;
-} */
+#result-page {
+  display: none;
+}
