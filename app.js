@@ -27,7 +27,7 @@ const data = [
   },
   {
     q: "Which car won Fernando Alonso his first tittle in Formula 1 with?",
-    answer: ['Ferarri', 'Alfo Romeo', 'Mercedez AMG', 'Renault'],
+    answer: ['Ferarri', 'Alfo Romeo', 'Mercedes AMG', 'Renault'],
     correctIndex: 4,
   },
   {
