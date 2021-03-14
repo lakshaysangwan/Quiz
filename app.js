@@ -11,7 +11,7 @@ const submitButton = document.getElementById("submit");
 const nextButton = document.getElementById("next");
 let radios = document.getElementsByName("flexRadioDefault");
 const scoreDiv = document.getElementById("scoreDivSpan");
-const username = document.getElementById("username").value;
+let username = document.getElementById("username");
 let password = document.getElementById("password");
 
 const data = [
@@ -75,7 +75,7 @@ let answersByUsers = Array(data.length-1).fill(0);
 let currentQuestion = 0;
 // functions
 function startTest() {
-  if (!validateEmail(username) || password.value == '') {
+  if (!validateEmail(username.value) || password.value == '') {
     alert('Enter correct credentials!!');
   } else {
     unchecked();
