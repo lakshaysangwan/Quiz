@@ -1,7 +1,10 @@
 .container{
-    border: 5px solid rgb(0, 119, 255);
+    /* border: 5px solid rgb(0, 119, 255); */
     height: 95%;
     max-width: 700px;
+}
+.instructions{
+    margin-bottom: 2em;
 }
 .login{
     margin: 2em auto;
@@ -13,16 +16,48 @@
 .form-check{
     margin-top: 2em;
 }
-
-#a,#b,#c,#d,#e,#f,#g,#h,#i,#j,#previous,#next,#submit{
-    display: none;
-}
 #timer-card{
     margin: 2em auto;
 }
+#nextSubmitPreviousButtons{
+    margin-bottom: 2em;
+}
+
+#previous, #submit, #next{
+    visibility:hidden;
+    margin: 0em 1em;
+}
+#scoreDiv{
+    margin-top: 5em;
+    /* border: 5px solid orange; */
+}
+
+
+
+/* -----------------------divs made invisible ------------------------*/
 #timer{
     display: none;
 }
 #question-page{
     display: none;
 }
+
+#result-page{
+    display: none;
+}
+
+/* testing */
+
+
+/* #result-page{
+    display: block;
+}  */
+/* #introduction-page{
+    display: none;
+} */
+/* #question-page{
+    display: block;
+} */
+/* #timer{
+    display: block;
+} */

@@ -15,7 +15,7 @@
     <script defer src="app.js"></script>
   </head>
   <body>
-    <!-- main body start here -->
+    <!-- main body start here-->
     <div class="container mt-3">
       <!-- Introduction page starts here -->
       <div id="introduction-page">
@@ -46,12 +46,12 @@
             />
           </div>
           <div class="text-center mt-3">
-            <button type="button" class="btn btn-success" onclick="startTest()">
+            <button type="button" class="btn btn-success" onclick="startTest();timer(601000);">
               Start
             </button>
           </div>
         </div>
-        <div class="card mt-5">
+        <div class="card mt-5 instructions">
           <div class="card-header text-center">Instructions</div>
           <div class="card-body">
             <ol>
@@ -80,8 +80,10 @@
         <div id="timer">
           <div class="card w-50" id="timer-card">
             <div class="card-header text-center"> Time Remaining</div>
-            <div class="card-body">
+            <div class="card-body text-center h3" id="timer-body">
               <!-- time data goes here -->
+
+
             </div>
           </div>
         </div>
@@ -93,26 +95,26 @@
             </div>
             <div class="card-body">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="option1">
-                <label class="form-check-label" for="option1">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="option1Div" value="1" onclick="check()">
+                <label  id="option1" class="form-check-label" for="option1" id="option1Div">
                   Option 1
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="option2">
-                <label class="form-check-label" for="option2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="option2Div" value="2" onclick="check()">
+                <label id="option2" class="form-check-label" for="option2">
                   Option 2
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="option3">
-                <label class="form-check-label" for="option3">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="option3Div" value="3" onclick="check()">
+                <label id="option3" class="form-check-label" for="option3">
                   Option 3
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="option4">
-                <label class="form-check-label" for="option4">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="option4Div" value="4" onclick="check()">
+                <label id="option4" class="form-check-label" for="option4">
                   Option 4
                 </label>
               </div>
@@ -120,17 +122,27 @@
           </div>
         </div>
 
-
-        <div id="nextSubmitPreviousButtons" class="text-center mt-3">
-          <button id="previous" type="button" class="btn btn-outline-dark" onclick="">Previous</button>
-          <button id="submit" type="button" class="btn btn-outline-success" onclick="">Submit</button>
-          <button id="next" type="button" class="btn btn-outline-dark" onclick="nextQuestion()">Next</button>
+        <!-- buttons for previous submit and next -->
+        <div id="nextSubmitPreviousButtons" class="text-center mt-3 space-around">
+          <button id="previous" type="button" class="btn btn-outline-dark" onclick="previousQuestion()">Previous</button>
+          <button id="submit" type="button" class="btn btn-outline-success" onclick="submitTest()">Submit</button>
+          <button id="next" type="button" class="btn btn-outline-dark" onclick="nextQuestion()" disabled>Next</button>
         </div>
-
-        
       </div>
-      <div id="result-page">
-        
+
+      <!-- result page goes here -->
+      <div id="result-page" class="text-center">
+        <div class="display-1">Hey</div>
+        <br>
+        <div class="display-4">
+          You've successfully completed the test
+        </div>
+        <div class="h4" id="scoreDiv">
+          Your score is : <span id="scoreDivSpan"></span>
+        </div>
+        <div>
+          Good Game
+        </div>
       </div>
     </div>
   </body>
