@@ -17,7 +17,7 @@ let password = document.getElementById("password");
 //data variable is an array which contains objects of respective questions in quiz along with options and correct answer index of the same question.
 const data = [
   {
-    q: "In which year did Maradona score a goal with his hand?",
+    q: "In which year did Maradona scored goal with 'Hand of God'?",
     answer: [1986, 1980, 1990, 1982],
     correctIndex: 1,
   },
@@ -184,4 +184,8 @@ function validateEmail(emailID) {
     return false;
   }
   return true;
+}
+
+function reload() {
+  window.location.reload();
 }

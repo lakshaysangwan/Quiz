@@ -1,10 +1,11 @@
 .container {
-  /* border: 5px solid rgb(0, 119, 255);  for testing purpose only*/
-  height: 95%;
+  border-radius: 5px;
+  height: fit-content;
+  max-height: 98%;
   max-width: 700px;
 }
 .instructions {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 .login {
   margin: 2em auto;
@@ -22,7 +23,6 @@
 #nextSubmitPreviousButtons {
   margin-bottom: 2em;
 }
-
 #previous,
 #submit,
 #next {
@@ -31,7 +31,9 @@
 }
 #scoreDiv {
   margin-top: 5em;
-  /* border: 5px solid orange; for testing purpose only */
+}
+#restartButton {
+  margin-top: 1em;
 }
 
 /* -----------------------divs made invisible ------------------------*/
@@ -41,7 +43,7 @@
 #question-page {
   display: none;
 }
-
 #result-page {
   display: none;
+  margin-bottom: 2em;
 }

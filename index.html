@@ -16,7 +16,7 @@
   </head>
   <body>
     <!-- main body start here-->
-    <div class="container mt-3">
+    <div class="container mt-1">
       <!-- Introduction page starts here -->
       <div id="introduction-page">
         <div class="display-1 text-center">Hey</div>
@@ -168,7 +168,7 @@
           <button
             id="previous"
             type="button"
-            class="btn btn-outline-dark"
+            class="btn btn-danger"
             onclick="previousQuestion()"
           >
             Previous
@@ -176,7 +176,7 @@
           <button
             id="submit"
             type="button"
-            class="btn btn-outline-success"
+            class="btn btn-success"
             onclick="submitTest()"
           >
             Submit
@@ -184,7 +184,7 @@
           <button
             id="next"
             type="button"
-            class="btn btn-outline-dark"
+            class="btn btn-primary"
             onclick="nextQuestion()"
             disabled
           >
@@ -202,6 +202,16 @@
           Your score is : <span id="scoreDivSpan"></span>
         </div>
         <div>Good Game</div>
+        <br /><br /><br />
+        <div>Maybe you wanna try again?</div>
+        <button
+          id="restartButton"
+          type="button"
+          class="btn btn-dark"
+          onclick="reload()"
+        >
+          Restart
+        </button>
       </div>
     </div>
   </body>
