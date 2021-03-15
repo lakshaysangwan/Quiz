@@ -108,7 +108,13 @@ function displayQuestions() {
   option2Div.innerHTML = data[currentQuestion].answer[1];
   option3Div.innerHTML = data[currentQuestion].answer[2];
   option4Div.innerHTML = data[currentQuestion].answer[3];
-  nextButton.disabled = true;
+
+  if(currentQuestion != data.length - 1 && answersByUsers[currentQuestion]>0){
+    nextButton.disabled=false;
+  }else{
+    nextButton.disabled = true;
+  }
+  
 }
 
 //nextQuestion displays the next question
