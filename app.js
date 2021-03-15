@@ -14,10 +14,11 @@ const scoreDiv = document.getElementById("scoreDivSpan");
 let username = document.getElementById("username");
 let password = document.getElementById("password");
 
+//data variable is an array which contains objects of respective questions in quiz along with options and correct answer index of the same question.
 const data = [
   {
     q: "In which year did Maradona score a goal with his hand?",
-    answer: [1986, 1980 , 1990, 1982],
+    answer: [1986, 1980, 1990, 1982],
     correctIndex: 1,
   },
   {
@@ -26,57 +27,59 @@ const data = [
     correctIndex: 1,
   },
   {
-    q: "Which car won Fernando Alonso his first tittle in Formula 1 with?",
-    answer: ['Ferarri', 'Alfo Romeo', 'Mercedes AMG', 'Renault'],
+    q: "Which car won Fernando Alonso his first title in Formula 1 with?",
+    answer: ["Ferarri", "Alfa Romeo", "Mercedes AMG", "Renault"],
     correctIndex: 4,
   },
   {
     q: "Which country operationalized world’s largest radio telescope?",
-    answer: ['India', 'France', 'United States of America', 'Russia'],
+    answer: ["India", "France", "United States of America", "Russia"],
     correctIndex: 3,
   },
   {
     q: "Which one among the following radiations carries maximum energy?",
-    answer: ['Ultra-voilet', 'Gamma', 'X-Ray', 'Infra-red'],
+    answer: ["Ultra-voilet", "Gamma", "X-Ray", "Infra-red"],
     correctIndex: 2,
   },
   {
-    q: "The head quarters of world trade organization is in",
-    answer: ['Montreal', 'Seattle', 'Geneva', 'The Hague'],
+    q: "The head quarters of world trade organization is in?",
+    answer: ["Montreal", "Seattle", "Geneva", "The Hague"],
     correctIndex: 3,
   },
   {
-    q: "The Second Italian Satellite launched from Soviet Union was",
-    answer: ['Rohini', 'Aryabhatta', 'Bhaskar-1', 'Apsara'],
+    q: "The Second Indian Satellite launched from Soviet Union was?",
+    answer: ["Rohini", "Aryabhata", "Bhaskar-1", "Apsara"],
     correctIndex: 3,
   },
   {
-    q: "The metal whose salts are sensitive to light is",
-    answer: ['Silver', 'Zinc', 'Copper', 'Gold'],
+    q: "The metal whose salts are sensitive to light is?",
+    answer: ["Silver", "Zinc", "Copper", "Gold"],
     correctIndex: 1,
   },
   {
     q: "Who is the father of geometry?",
-    answer: ['Aristotle', 'Euclid', 'Pythagoras', 'Kepler'],
+    answer: ["Aristotle", "Euclid", "Pythagoras", "Kepler"],
     correctIndex: 2,
   },
   {
     q: "In which field is the B.C. Roy Award given?",
-    answer: ['Medicine', 'Journalism', 'Music', 'Environment'],
+    answer: ["Medicine", "Journalism", "Music", "Environment"],
     correctIndex: 1,
-  }
+  },
 ];
 
-// answers
-let answersByUsers = Array(data.length-1).fill(0);
+// answersByUsers array is of length of number of questions and is completely filled with 0. (filling zero is not necessary, i did it because i was trying different approaches.)
+let answersByUsers = Array(data.length - 1).fill(0);
 
-//-----------------------------------
-
+//Question that is currently displayed on the screen
 let currentQuestion = 0;
-// functions
+
+// functions that are used in this project starts here
+
+//this function is evoked on pressing the start button on intro screen
 function startTest() {
-  if (!validateEmail(username.value) || password.value == '') {
-    alert('Enter correct credentials!!');
+  if (!validateEmail(username.value) || password.value == "") {
+    alert("Enter correct credentials!!");
   } else {
     unchecked();
     introductionDiv.remove();
@@ -85,6 +88,7 @@ function startTest() {
   }
 }
 
+//this function decides which button would be displayed on bottom of the questions according to the question number. Also question data is being put to screen here.
 function displayQuestions() {
   if (currentQuestion == data.length - 1) {
     submitButton.style.visibility = "visible";
@@ -98,7 +102,7 @@ function displayQuestions() {
   } else {
     previousButton.style.visibility = "hidden";
   }
-
+  unchecked();
   questionDiv.style.display = "block";
   question1.innerHTML = data[currentQuestion].q;
   option1Div.innerHTML = data[currentQuestion].answer[0];
@@ -108,19 +112,20 @@ function displayQuestions() {
   nextButton.disabled = true;
 }
 
+//nextQuestion displays the next question
 function nextQuestion() {
   currentQuestion++;
-  unchecked();
   displayQuestions();
 }
 
+//previousQuestion takes you to previous question
 function previousQuestion() {
   answersByUsers.pop();
   currentQuestion--;
-  unchecked();
   displayQuestions();
 }
 
+//this is evoked on pressing the submit button
 function submitTest() {
   questionDiv.remove();
   resultDiv.style.display = "block";
@@ -133,6 +138,7 @@ function submitTest() {
   scoreDiv.innerHTML = result + " out of " + data.length;
 }
 
+//it marks all the radios as unchecked
 function unchecked() {
   document.getElementById("option1Div").checked = false;
   document.getElementById("option2Div").checked = false;
@@ -140,6 +146,7 @@ function unchecked() {
   document.getElementById("option4Div").checked = false;
 }
 
+//it enables the next button under the question on selecting the any given answer.
 function check() {
   var flag = 0;
   for (var i = 0; i < radios.length; i++) {
@@ -154,6 +161,7 @@ function check() {
   }
 }
 
+//this is timer function manages the timer data
 function timer(distance) {
   var x = setInterval(function () {
     distance -= 1000;
@@ -168,6 +176,7 @@ function timer(distance) {
   }, 1000);
 }
 
+//this validates if the given email is valid
 function validateEmail(emailID) {
   atpos = emailID.indexOf("@");
   dotpos = emailID.lastIndexOf(".");

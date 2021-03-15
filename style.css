@@ -1,5 +1,5 @@
 .container {
-  /* border: 5px solid rgb(0, 119, 255); */
+  /* border: 5px solid rgb(0, 119, 255);  for testing purpose only*/
   height: 95%;
   max-width: 700px;
 }
@@ -31,7 +31,7 @@
 }
 #scoreDiv {
   margin-top: 5em;
-  /* border: 5px solid orange; */
+  /* border: 5px solid orange; for testing purpose only */
 }
 
 /* -----------------------divs made invisible ------------------------*/
