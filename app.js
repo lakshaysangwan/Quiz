@@ -204,3 +204,5 @@ function validateEmail(emailID) {
 function reload() {
   window.location.reload();
 }
+
+// Java to khamkha badnaam hai, asli dard to JavaScript deti hai
