@@ -102,7 +102,6 @@ function displayQuestions() {
   } else {
     previousButton.style.visibility = "hidden";
   }
-  unchecked();
   questionDiv.style.display = "block";
   question1.innerHTML = data[currentQuestion].q;
   option1Div.innerHTML = data[currentQuestion].answer[0];
@@ -115,13 +114,16 @@ function displayQuestions() {
 //nextQuestion displays the next question
 function nextQuestion() {
   currentQuestion++;
+  unchecked();
   displayQuestions();
 }
 
 //previousQuestion takes you to previous question
 function previousQuestion() {
-  answersByUsers.pop();
+  // answersByUsers.pop();
   currentQuestion--;
+  var select = 'option'+answersByUsers[currentQuestion]+'Div';
+  document.getElementById(select).checked=true;
   displayQuestions();
 }
 
