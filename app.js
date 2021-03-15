@@ -76,6 +76,7 @@ let currentQuestion = 0;
 
 // functions that are used in this project starts here
 
+
 //this function is evoked on pressing the start button on intro screen
 function startTest() {
   if (!validateEmail(username.value) || password.value == "") {
@@ -120,7 +121,13 @@ function displayQuestions() {
 //nextQuestion displays the next question
 function nextQuestion() {
   currentQuestion++;
-  unchecked();
+  if(answersByUsers[currentQuestion]>0){
+    var select = 'option'+answersByUsers[currentQuestion]+'Div';
+    document.getElementById(select).checked=true;
+  }
+  else{
+    unchecked();
+  }
   displayQuestions();
 }
 
