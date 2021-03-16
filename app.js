@@ -76,17 +76,16 @@ let currentQuestion = 0;
 
 // functions that are used in this project starts here
 
-
 //this function is evoked on pressing the start button on intro screen
 function startTest() {
-  if (!validateEmail(username.value) || password.value == "") {
-    alert("Enter correct credentials!!");
-  } else {
-    unchecked();
-    introductionDiv.remove();
-    document.getElementById("timer").style.display = "block";
-    displayQuestions();
-  }
+  // if (!validateEmail(username.value) || password.value == "") {
+  //   alert("Enter correct credentials!!");
+  // } else {
+  unchecked();
+  introductionDiv.remove();
+  document.getElementById("timer").style.display = "block";
+  displayQuestions();
+  // }
 }
 
 //this function decides which button would be displayed on bottom of the questions according to the question number. Also question data is being put to screen here.
@@ -110,22 +109,32 @@ function displayQuestions() {
   option3Div.innerHTML = data[currentQuestion].answer[2];
   option4Div.innerHTML = data[currentQuestion].answer[3];
 
-  if(currentQuestion != data.length - 1 && answersByUsers[currentQuestion]>0){
-    nextButton.disabled=false;
-  }else{
+  if (
+    currentQuestion != data.length - 1 &&
+    answersByUsers[currentQuestion] > 0
+  ) {
+    nextButton.disabled = false;
+  } else {
     nextButton.disabled = true;
   }
-  
+
+  if (
+    currentQuestion == data.length - 1 &&
+    answersByUsers[currentQuestion] > 0
+  ) {
+    submitButton.disabled = false;
+  } else {
+    submitButton.disabled = true;
+  }
 }
 
 //nextQuestion displays the next question
 function nextQuestion() {
   currentQuestion++;
-  if(answersByUsers[currentQuestion]>0){
-    var select = 'option'+answersByUsers[currentQuestion]+'Div';
-    document.getElementById(select).checked=true;
-  }
-  else{
+  if (answersByUsers[currentQuestion] > 0) {
+    var select = "option" + answersByUsers[currentQuestion] + "Div";
+    document.getElementById(select).checked = true;
+  } else {
     unchecked();
   }
   displayQuestions();
@@ -135,8 +144,8 @@ function nextQuestion() {
 function previousQuestion() {
   // answersByUsers.pop();
   currentQuestion--;
-  var select = 'option'+answersByUsers[currentQuestion]+'Div';
-  document.getElementById(select).checked=true;
+  var select = "option" + answersByUsers[currentQuestion] + "Div";
+  document.getElementById(select).checked = true;
   displayQuestions();
 }
 
@@ -168,6 +177,9 @@ function check() {
     if (radios[i].checked) flag = 1;
   }
   if (flag == 1) nextButton.disabled = false;
+  if (currentQuestion == data.length - 1 && flag == 1) {
+    submitButton.disabled = false;
+  }
 
   for (var radio of radios) {
     if (radio.checked) {
@@ -182,8 +194,13 @@ function timer(distance) {
     distance -= 1000;
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    document.getElementById("timer-body").innerHTML =
-      minutes + "m " + seconds + "s ";
+    if (distance < 60000) {
+      document.getElementById("timer-body").style.color = "red";
+      document.getElementById("timer-body").innerHTML = seconds + "s ";
+    } else {
+      document.getElementById("timer-body").innerHTML =
+        minutes + "m " + seconds + "s ";
+    }
     if (distance < 0) {
       clearInterval(x);
       submitTest();

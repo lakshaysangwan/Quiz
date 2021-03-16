@@ -1,4 +1,5 @@
 .container {
+  border: 5px solid orange ;
   border-radius: 5px;
   height: fit-content;
   max-height: 98%;
@@ -34,6 +35,9 @@
 }
 #restartButton {
   margin-top: 1em;
+}
+#timer-body{
+  /* color: red; */
 }
 
 /* -----------------------divs made invisible ------------------------*/
